@@ -10,21 +10,21 @@
 
 - Disable same-origin policy in Chrome:
 
-    Create a Chrome shortcut:
-        Right-click on your desktop, select "New > Shortcut."
-        In the "Target" field, enter the path to your Chrome installation, followed by the flags --disable-web-security --user-data-dir=c:\tmppath. Replace c:\tmppath with the path to a temporary folder you create.
-        For example: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir=c:\tmppath
-    Name the shortcut:
-        Click "Next," and give the shortcut a name like "Chrome-NoSecurity."
-        Click "Finish" to create the shortcut.
-    Use the new shortcut:
-        Double-click the shortcut to open Chrome with the same-origin policy disabled. You'll see a warning in the Developer Console indicating that the same-origin policy is not enforced.
-    Important Note:
-        Only use this setup in a development or debugging environment. Do not use it in production, as it poses serious security risks.
-        Each time you open Chrome using this shortcut, it will run as an independent instance, without affecting other Chrome windows. After closing this instance, Chrome will revert to enforcing the same-origin policy.
-        The temporary directory specified by --user-data-dir will be deleted when Chrome exits, so make sure to use a temporary location and not an important user directory.
-    Summary:
-        The same-origin policy is crucial for web security. Only disable it when absolutely necessary for development purposes.
+    - Create a Chrome shortcut:
+        - Right-click on your desktop, select "New > Shortcut."
+        - In the "Target" field, enter the path to your Chrome installation, followed by the flags --disable-web-security --user-data-dir=c:\tmppath. Replace c:\tmppath with the path to a temporary folder you create.
+        - For example: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir=c:\tmppath
+    - Name the shortcut:
+        - Click "Next," and give the shortcut a name like "Chrome-NoSecurity."
+        - Click "Finish" to create the shortcut.
+    - Use the new shortcut:
+        - Double-click the shortcut to open Chrome with the same-origin policy disabled. You'll see a warning in the Developer Console indicating that the same-origin policy is not enforced.
+    - Important Note:
+        - Only use this setup in a development or debugging environment. Do not use it in production, as it poses serious security risks.
+        - Each time you open Chrome using this shortcut, it will run as an independent instance, without affecting other Chrome windows. After closing this instance, Chrome will revert to enforcing the same-origin policy.
+        - The temporary directory specified by --user-data-dir will be deleted when Chrome exits, so make sure to use a temporary location and not an important user directory.
+    - Summary:
+        - The same-origin policy is crucial for web security. Only disable it when absolutely necessary for development purposes.
 
 # Getting Started with Create React App
 
