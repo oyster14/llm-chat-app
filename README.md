@@ -1,19 +1,30 @@
-# 如何使用
+# How to use
 
-- 把.env.example 文件重命名为.env.local
-- REACT_APP_LLM_SERVICE_URL 改成你的 tensorrtllm 端口
+- Rename .env.example to .env.local:
+
+- Change REACT_APP_LLM_SERVICE_URL to your TensorRTLLM port
+  
 - npm install
+  
 - npm start
-- 关闭浏览器同源
-  - 创建一个 Chrome 快捷方式。右键点击桌面,选择"新建 > 快捷方式"。
-  - 在"目标"栏中输入 Chrome 的安装路径,并在后面添加--disable-web-security --user-data-dir=c:\tmppath 这两个启动参数。其中 c:\tmppath 请替换为你自己的一个临时文件夹路径。
-  - 例如: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir=c:\tmppath
-  - 点击"下一步",为快捷方式取一个名字,如"Chrome-NoSecurity"。点击"完成"。
-  - 双击这个新建的快捷方式,打开 Chrome,同源限制就被关闭了。此时如果打开开发者工具的 Console,会看到明确的警告提示,表示当前已不受同源策略限制。
-  - 需要注意的是: 仅在开发调试场景使用,线上或正式环境千万不要这样配置,否则会有严重的安全隐患。
-  - 每次从这个快捷方式打开的 Chrome 都是一个独立的实例,不会影响到其他 Chrome 窗口。关闭该实例后,下次再打开就又恢复同源限制了。
-  - --user-data-dir 指定的临时目录,会在 Chrome 退出时被删除。所以最好指定一个临时目录,不要指向重要的用户目录。
-  - 总之,为了 Web 安全,同源策略非常重要
+
+- Disable same-origin policy in Chrome:
+
+    Create a Chrome shortcut:
+        Right-click on your desktop, select "New > Shortcut."
+        In the "Target" field, enter the path to your Chrome installation, followed by the flags --disable-web-security --user-data-dir=c:\tmppath. Replace c:\tmppath with the path to a temporary folder you create.
+        For example: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir=c:\tmppath
+    Name the shortcut:
+        Click "Next," and give the shortcut a name like "Chrome-NoSecurity."
+        Click "Finish" to create the shortcut.
+    Use the new shortcut:
+        Double-click the shortcut to open Chrome with the same-origin policy disabled. You'll see a warning in the Developer Console indicating that the same-origin policy is not enforced.
+    Important Note:
+        Only use this setup in a development or debugging environment. Do not use it in production, as it poses serious security risks.
+        Each time you open Chrome using this shortcut, it will run as an independent instance, without affecting other Chrome windows. After closing this instance, Chrome will revert to enforcing the same-origin policy.
+        The temporary directory specified by --user-data-dir will be deleted when Chrome exits, so make sure to use a temporary location and not an important user directory.
+    Summary:
+        The same-origin policy is crucial for web security. Only disable it when absolutely necessary for development purposes.
 
 # Getting Started with Create React App
 
